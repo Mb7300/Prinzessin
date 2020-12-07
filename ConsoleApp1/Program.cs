@@ -13,6 +13,8 @@ namespace ConsoleApp1
             char[,] raster = new char[3,3];
             for(int zeile = 0; zeile < raster.Length; zeile++)
             {
+                string input = Console.ReadLine();
+                Console.WriteLine(input);
             }
         }
     }
