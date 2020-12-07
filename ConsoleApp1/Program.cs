@@ -10,6 +10,10 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            char[,] raster = new char[3,3];
+            for(int zeile = 0; zeile < raster.Length; zeile++)
+            {
+            }
         }
     }
 }
