@@ -10,11 +10,30 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            char[,] raster = new char[3,3];
-            for(int zeile = 0; zeile < raster.Length; zeile++)
+            for (int y = 0; y < 3; y++) 
             {
-                string input = Console.ReadLine();
-                Console.WriteLine(input);
+                string zeile = Console.ReadLine();
+                for (int x = 0; x < 3; x++)
+                {
+                    char zeichen = zeile[x];
+                    if (zeichen  == 'm')
+                    {
+                        //Ort von m gefunden 
+
+                    } 
+                    else if (zeichen == 'p')
+                    {
+
+                        // Ort von p gefunden
+
+                    }
+                    else if (zeichen!= '-')
+                    {
+                        Console.WriteLine("Ungültige Zeichen vorhanden, bitte Zeile erneut eingeben!");
+                        y--;
+                        break;
+                    }
+                }
             }
         }
     }
