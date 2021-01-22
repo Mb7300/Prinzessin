@@ -9,9 +9,23 @@ namespace ConsoleApp1
 {
     class Program
     {
+
+
         static void Main(string[] args)
         {
-            Point m = new Point();
+            {
+                Console.WriteLine("h steht für die Position des Heldens der die Prinzessin retten will. p steht für die Position der Prinzessin.");
+                Console.WriteLine("Insgesamt darf man je einmal den Buchstaben h und einmal den Buchstaben p verwenden.");
+                Console.WriteLine("Die Buchstaben müssen klein geschrieben sein!");
+                Console.WriteLine("Ein Beispiel für die drei Zeilen:");
+                Console.WriteLine("--p");
+                Console.WriteLine("---");
+                Console.WriteLine("--h");
+                Console.WriteLine("Geben sie nun ihre Zeilen ein:");
+            }
+
+            
+            Point h = new Point();
             Point p = new Point();
 
             for (int y = 0; y < 3; y++) 
@@ -20,9 +34,9 @@ namespace ConsoleApp1
                 for (int x = 0; x < 3; x++)
                 {
                     char zeichen = zeile[x];
-                    if (zeichen  == 'm')
+                    if (zeichen  == 'h')
                     {
-                        m = new Point(x, y);
+                        h = new Point(x, y);
                         //Ort von m gefunden 
 
                     } 
@@ -40,37 +54,37 @@ namespace ConsoleApp1
                     }
                 }
             }
-            Console.WriteLine("M ist an der Stelle: " + m.ToString());
+            Console.WriteLine("H ist an der Stelle: " + h.ToString());
             Console.WriteLine("P ist an der Stelle: " + p.ToString());
-            Point weg = new Point(p.X - m.X, p.Y - m.Y);
+            Point weg = new Point(p.X - h.X, p.Y - h.Y);
             Console.WriteLine("Der Weg ist: " + weg.ToString());
 
             if (weg.X<0)
             {
                 for (int x = 0; x < -weg.X; x++)
                 {
-                    Console.WriteLine("L");
+                    Console.WriteLine("Einmal nach Links");
                 }
             } 
             else if (weg.X>0)
             {
                 for (int x = 0; x < weg.X; x++)
                 {
-                    Console.WriteLine("R");
+                    Console.WriteLine("Einmal nach Rechts");
                 }
             }
             if (weg.Y < 0)
             {
                 for (int y = 0; y < -weg.Y; y++)
                 {
-                    Console.WriteLine("U");
+                    Console.WriteLine("Einmal nach Oben");
                 }
             }
             else if (weg.Y > 0)
             {
                 for (int y = 0; y < weg.Y; y++)
                 {
-                    Console.WriteLine("D");
+                    Console.WriteLine("Einmal nach Unten");
                 }
             }
             Console.ReadKey();
