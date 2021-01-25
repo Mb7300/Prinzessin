@@ -13,18 +13,25 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            {
-                Console.WriteLine("h steht für die Position des Heldens der die Prinzessin retten will. p steht für die Position der Prinzessin.");
-                Console.WriteLine("Insgesamt darf man je einmal den Buchstaben h und einmal den Buchstaben p verwenden.");
-                Console.WriteLine("Die Buchstaben müssen klein geschrieben sein!");
-                Console.WriteLine("Ein Beispiel für die drei Zeilen:");
-                Console.WriteLine("--p");
-                Console.WriteLine("---");
-                Console.WriteLine("--h");
-                Console.WriteLine("Geben sie nun ihre Zeilen ein:");
-            }
-
             
+            Console.WriteLine("h steht für die Position des Heldens der die Prinzessin retten will. p steht für die Position der Prinzessin.");
+            Console.WriteLine("Insgesamt darf man je einmal den Buchstaben h und einmal den Buchstaben p verwenden.");
+            Console.WriteLine("Die Buchstaben müssen klein geschrieben sein!");
+            Console.WriteLine("Geben sie nun ein wie breit ihre Zeile sein soll(3-10)");
+                       
+            int breite = 0;
+            while (breite == 0)
+            {                               
+                string breiteAlsText = Console.ReadLine();
+                try
+                {
+                    breite = int.Parse(breiteAlsText);
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Ungültige Eingabe");
+                }
+            }
             Point h = new Point();
             Point p = new Point();
 
@@ -89,6 +96,11 @@ namespace ConsoleApp1
             }
             Console.ReadKey();
            
+        }
+
+        private static void ToChar(string breite)
+        {
+            throw new NotImplementedException();
         }
     }
 }
